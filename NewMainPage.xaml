@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.NewMainPage"
+             Title="NewMainPage"
+              Appearing="ContentPage_Appearing" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary  >
+            <Style TargetType="ImageButton">
+                <Setter Property="Aspect" Value="AspectFill"/>
+
+            </Style>
+
+            <Style TargetType="Border">
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="WhiteSmoke"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border VerticalOptions="Center" HorizontalOptions="Center"   HeightRequest="80" WidthRequest="80" >
+            <ImageButton x:Name="ImageButton_Main"  Aspect="AspectFill"  Clicked="ImageButton_Clicked_Profile" />
+            <Border.StrokeShape >
+                    <RoundRectangle CornerRadius="190"/>
+                </Border.StrokeShape>
+            </Border>
+
+            <Border Grid.Row="1" >
+            <SearchBar x:Name="SerchBar_MainPage"  Placeholder="Быстрый поиск" SearchButtonPressed="SerchBar_MainPage_SearchButtonPressed" FontSize="20"  />
+            <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10" />
+                </Border.StrokeShape>
+            </Border>
+
+            <Border  Grid.Row="2">
+                <ImageButton  Source="tr.jpeg"  Clicked="ClicK_Milk_Category"  />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+            
+            <Label Text="Молочная продукция" Grid.Row="2" FontFamily="sans-serif" FontAttributes="Bold" />
+
+
+            
+
+            <Border  Grid.Row="3" >
+                <ImageButton  Source="fr_ov1.jpeg" Background="White" Clicked="ImageButton_Clicked_Vegetables_And_Fruits"/>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+
+            </Border>
+            <Label Text="Овощи и фрукты" Grid.Row="3"  >
+            </Label>
+
+            <Border  Grid.Row="4">
+                <ImageButton Source="fonconfet.jpeg" Clicked="ImageButton_Clicked" />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+        <Label Text="Сладости" Grid.Row="4" />
+
+            <Border  Grid.Row="5">
+                <ImageButton  Source="hleb.jpeg" Clicked="ImageButton_Clicked_1" />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+        <Label Text="Хлеб и выпечка" Grid.Row="5"/>
+            
+        <Border  Grid.Row="6">
+                <ImageButton  Source="Meat.jpeg" Clicked="ImageButton_Clicked_2"/>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+            <Label Text="Мясо,рыба,птица" Grid.Row="6"/>
+
+
+            <Border  Grid.Row="7">
+                <ImageButton  Source="water.jpeg" Clicked="ImageButton_Clicked_3"/>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+            <Label Text="Вода и напитки" Grid.Row="7"/>
+        <Border VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="10" Grid.Row="8" >
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="43" />
+                </Border.StrokeShape>
+                <ImageButton Source="car.jpg" Clicked="ImageButton_Clicked_Navigat_CartPage"  HeightRequest="85" WidthRequest="85" Aspect="AspectFill" />
+            </Border>
+
+        </Grid>
+
+    
+</ContentPage>

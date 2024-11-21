@@ -1,0 +1,235 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+
+		<!-- Note for MacCatalyst:
+		The default runtime is maccatalyst-x64, except in Release config, in which case the default is maccatalyst-x64;maccatalyst-arm64.
+		When specifying both architectures, use the plural <RuntimeIdentifiers> instead of the singular <RuntimeIdentifier>.
+		The Mac App Store will NOT accept apps with ONLY maccatalyst-arm64 indicated;
+		either BOTH runtimes must be indicated or ONLY macatalyst-x64. -->
+		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MauiApp4</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<!-- Display name -->
+		<ApplicationTitle>ПродуктЭкспресс</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauiapp4</ApplicationId>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\product_ikon.webp" />
+
+		<!-- Splash Screen -->
+
+		<!-- Images -->
+		<MauiSplashScreen Include="Resources\Splash\splash.jpg" Color="#F5F5F5" />
+		<MauiImage Include="Resources\Images\*" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\alpen_gold_chernika.webp" />
+	  <None Remove="Resources\Images\apple.webp" />
+	  <None Remove="Resources\Images\assorti.webp" />
+	  <None Remove="Resources\Images\avokado.webp" />
+	  <None Remove="Resources\Images\bakery.jpeg" />
+	  <None Remove="Resources\Images\banana.webp" />
+	  <None Remove="Resources\Images\barni.jpg" />
+	  <None Remove="Resources\Images\blagoyr.jpg" />
+	  <None Remove="Resources\Images\borjomi.jpg" />
+	  <None Remove="Resources\Images\bounty_trio.png" />
+	  <None Remove="Resources\Images\bread.jpeg" />
+	  <None Remove="Resources\Images\car.jpg" />
+	  <None Remove="Resources\Images\cart_delete.png" />
+	  <None Remove="Resources\Images\chees.jpeg" />
+	  <None Remove="Resources\Images\chees_b.jpeg" />
+	  <None Remove="Resources\Images\chees_belebeefskiy.jpeg" />
+	  <None Remove="Resources\Images\chees_brest.jpg" />
+	  <None Remove="Resources\Images\chees_cupruno.jpg" />
+	  <None Remove="Resources\Images\chocolate.jpeg" />
+	  <None Remove="Resources\Images\choco_pie.webp" />
+	  <None Remove="Resources\Images\cookies_cake.jpeg" />
+	  <None Remove="Resources\Images\cool_cola.jpeg" />
+	  <None Remove="Resources\Images\delete_cart.jpg" />
+	  <None Remove="Resources\Images\dried_fruits.jpeg" />
+	  <None Remove="Resources\Images\duhes.jpeg" />
+	  <None Remove="Resources\Images\farh_indilayt.jpg" />
+	  <None Remove="Resources\Images\fonconfet.jpeg" />
+	  <None Remove="Resources\Images\Fruts.jpeg" />
+	  <None Remove="Resources\Images\fr_ov1.jpeg" />
+	  <None Remove="Resources\Images\hleb.jpeg" />
+	  <None Remove="Resources\Images\hleb_aytin.jpg" />
+	  <None Remove="Resources\Images\hleb_bor.jpg" />
+	  <None Remove="Resources\Images\hleb_reme.jpeg" />
+	  <None Remove="Resources\Images\hrus_team.webp" />
+	  <None Remove="Resources\Images\i.svg" />
+	  <None Remove="Resources\Images\img_408797_1.png" />
+	  <None Remove="Resources\Images\indilayt.jpg" />
+	  <None Remove="Resources\Images\juices.jpeg" />
+	  <None Remove="Resources\Images\just_orange.jpg" />
+	  <None Remove="Resources\Images\kartof.png" />
+	  <None Remove="Resources\Images\kefir_prosto.jpg" />
+	  <None Remove="Resources\Images\kefir_s.jpeg" />
+	  <None Remove="Resources\Images\kefir_se.jpg" />
+	  <None Remove="Resources\Images\kefir_selo.jpg" />
+	  <None Remove="Resources\Images\kolbos.jpg" />
+	  <None Remove="Resources\Images\krab_russ.jpg" />
+	  <None Remove="Resources\Images\kruasan.jpg" />
+	  <None Remove="Resources\Images\lays.webp" />
+	  <None Remove="Resources\Images\luvbut.png" />
+	  <None Remove="Resources\Images\mandarin.webp" />
+	  <None Remove="Resources\Images\mare.jpg" />
+	  <None Remove="Resources\Images\meat.jpeg" />
+	  <None Remove="Resources\Images\meat_poultry.jpeg" />
+	  <None Remove="Resources\Images\miklbur.jpg" />
+	  <None Remove="Resources\Images\milk.jpeg" />
+	  <None Remove="Resources\Images\milkHaus.jpeg" />
+	  <None Remove="Resources\Images\mirel.webp" />
+	  <None Remove="Resources\Images\mors_clukva.webp" />
+	  <None Remove="Resources\Images\mors_lub.png" />
+	  <None Remove="Resources\Images\mors_lubim.jpg" />
+	  <None Remove="Resources\Images\m_ms.jpg" />
+	  <None Remove="Resources\Images\oreo.webp" />
+	  <None Remove="Resources\Images\papa_mo.jpg" />
+	  <None Remove="Resources\Images\parsley.webp" />
+	  <None Remove="Resources\Images\piligrim.jpg" />
+	  <None Remove="Resources\Images\pir.png" />
+	  <None Remove="Resources\Images\playlistmilk.jpeg" />
+	  <None Remove="Resources\Images\prostokva.jpeg" />
+	  <None Remove="Resources\Images\raspberry.webp" />
+	  <None Remove="Resources\Images\remove_7612810.png" />
+	  <None Remove="Resources\Images\restoriy.jpg" />
+	  <None Remove="Resources\Images\ritter_sport_cel_oreh.jpg" />
+	  <None Remove="Resources\Images\sausages.jpg" />
+	  <None Remove="Resources\Images\seafood.jpeg" />
+	  <None Remove="Resources\Images\seld.jpg" />
+	  <None Remove="Resources\Images\sem.webp" />
+	  <None Remove="Resources\Images\senehka.jpg" />
+	  <None Remove="Resources\Images\skittles.jpg" />
+	  <None Remove="Resources\Images\sloyka.jpg" />
+	  <None Remove="Resources\Images\smart_bar.webp" />
+	  <None Remove="Resources\Images\snacks.jpeg" />
+	  <None Remove="Resources\Images\soda_pop.jpeg" />
+	  <None Remove="Resources\Images\sok_dobr.jpg" />
+	  <None Remove="Resources\Images\sok_global_village.jpeg" />
+	  <None Remove="Resources\Images\solo_nina.jpg" />
+	  <None Remove="Resources\Images\sort.jpeg" />
+	  <None Remove="Resources\Images\so_papa.jpg" />
+	  <None Remove="Resources\Images\stani.jpg" />
+	  <None Remove="Resources\Images\tomat_globa_village.jpg" />
+	  <None Remove="Resources\Images\tomat_med.jpg" />
+	  <None Remove="Resources\Images\tr.jpeg" />
+	  <None Remove="Resources\Images\tvorig_k.jpeg" />
+	  <None Remove="Resources\Images\tvorog.jpeg" />
+	  <None Remove="Resources\Images\vegete.jpeg" />
+	  <None Remove="Resources\Images\vostok.webp" />
+	  <None Remove="Resources\Images\vyzanka.png" />
+	  <None Remove="Resources\Images\water.jpeg" />
+	  <None Remove="Resources\Images\waters.jpeg" />
+	  <None Remove="Resources\Images\yogurt.jpeg" />
+	  <None Remove="Resources\Images\yogurt_chudo.jpeg" />
+	  <None Remove="Resources\Images\yogurt_teos.jpeg" />
+	  <None Remove="Resources\Images\ypgurt_epica.jpeg" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="CollectionProducts.xaml.cs">
+	    <DependentUpon>CollectionProducts.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="EmailPasswor.xaml.cs">
+	    <DependentUpon>EmailPasswor.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ProductsInfoPage.xaml.cs">
+	    <DependentUpon>ProductsInfoPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="SubCategoriesProducts\BreadPastriesCategoriesPage.xaml.cs">
+	    <DependentUpon>BreadPastriesCategoriesPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EmailPasswor.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EmailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="NewMainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="OrderRegistrationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PageRegistr.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ProductsInfoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CollectionProducts.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ProfilePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\BreadPastriesCategoriesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\MeatCategories.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\MilkСategoriesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\VegetablesFruitsCategories.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\WaterCategories.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SubCategoriesProducts\СandyCategoriesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="TwoFactorAuthenticationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

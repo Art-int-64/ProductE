@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.OrderRegistrationPage"
+             Title="">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout>
+            <Label Text="Доставка" FontSize="30"/>
+            <Label Text="Куда" FontSize="20"/>
+            <Entry x:Name= "Enry_Address"  Placeholder="Введите адрес"/>
+            <StackLayout Orientation="Horizontal">
+                <Entry  Placeholder="Подъезд"/>
+                <Entry Placeholder="Квартира"/>
+                <Entry  Placeholder="Этаж"/>
+            </StackLayout>
+            <Entry  Placeholder="Комментарий к заказу"/>
+            <Label Text="Телефон получателя"/>
+            <Entry x:Name="Entry_Phone" IsEnabled="False"/>
+            <Label Text="Оплата" FontSize="20"/>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="Check_Box_Payment"/>
+                <Label Text="Наличными" VerticalOptions="Center"/>
+                <Border StrokeShape="RoundRectangle,20" HeightRequest="40" Margin="5" Padding="20">
+                    <Button Text="Картой" HeightRequest="40"  Clicked="Button_Clicked" Background="White" TextColor="Black"/>
+                </Border>
+            </StackLayout>
+            <Label Text="Что в цене" FontSize="20" TextColor="Black"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Text="Товары в заказе" />
+                <Label x:Name="Label_Sum" Grid.Column="1"/>
+                <Label Text="Тариф доставки" Grid.Row="1" />
+                <Label Grid.Column="1" Grid.Row="1">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="100"/>
+                            <Span Text="₽"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </VerticalStackLayout>
+        <Border Grid.Row="1"  StrokeShape="RoundRectangle 30,30,0,0">
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="Lebel_Result" FontSize="30"  TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Button x:Name="Button_RegistrOrder" Text="Заказать"  Grid.Column="1" FontSize="20" Grid.Row="2" Clicked="Button_RegistrOrder_Clicked" Grid.ColumnSpan="2" Margin="10"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+    
+</ContentPage> 

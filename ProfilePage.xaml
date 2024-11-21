@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.ProfilePage"
+             Title="">
+
+    <StackLayout>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  Grid.Row="0" Grid.Column="1" HorizontalOptions="Center"  HeightRequest="80" WidthRequest="80"  >
+                <ImageButton x:Name="Profile_ImagButton" Aspect="AspectFill" Clicked="Profile_ImagButton_Clicked"  />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="190"/>
+                </Border.StrokeShape>
+            </Border>
+        </Grid>
+        <Label Text="логин:"/>
+        <Entry x:Name="Profile_Entry_Loginn"/>
+        <Label Text="Пароль:"/>
+        <Entry x:Name="Profile_Entry_Password" IsPassword="True"/>
+        <Label Text="Адрес электронной почты"/>
+        <Entry x:Name="Profile_Entry_Email" Keyboard="Email"/>
+        <Label Text="Номер телефона"/>
+        <Entry x:Name="Profile_Entry_Phone" Keyboard="Telephone"/>
+        <Button Clicked="Button_Clicked_Transform" Text="Сохранить изменения"  HorizontalOptions="Center" FontSize="17"/>
+        <Button Clicked="Button_Clicked_Exit" Text="Выйти из аккаунта"  HorizontalOptions="Center" FontSize="12"  Margin="0,15,0,0"/>
+
+    </StackLayout>
+</ContentPage>

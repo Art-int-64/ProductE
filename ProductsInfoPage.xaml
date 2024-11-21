@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.ProductsInfoPage"
+             Title="" Appearing="ContentPage_Appearing" NavigationPage.IconColor="Black"  >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="LineBreakMode" Value="WordWrap"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+
+            <Style TargetType="Border">
+                <Setter Property="StrokeShape" Value="RoundRectangle 20"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="10*"/>
+               <RowDefinition />
+                
+            </Grid.RowDefinitions>
+            <ScrollView>
+            <StackLayout Padding="15" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image x:Name="Image_ImageProducts"    Aspect="AspectFill"  />
+                </Grid>
+
+                <Label x:Name="Label_Name"    FontAttributes="Bold" TextColor="Black"  FontSize="20"  />
+                <Label  Text="Cостав:"  FontSize="17" TextColor="Black" />
+                <Label x:Name="Label_Structure"   />
+                <Label Text="Срок годности:" FontSize="17" TextColor="Black" />
+                <Label x:Name="Label_Term" />
+                <Label Text="Бренд:" FontSize="17" TextColor="Black"/>
+                <Label x:Name="Label_Brand" />
+                <Label Text="Упаковка:" FontSize="17" TextColor="Black" />
+                <Label x:Name="Label_Pack"  />
+
+            </StackLayout>
+            </ScrollView>
+        <Border Grid.Row="1"  StrokeShape="RoundRectangle 30,30,0,0">
+            <Grid Grid.Row="1"   >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="0.6*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label x:Name="Lebel_Price" FontSize="30"  TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Border  Grid.Column="1" Margin="5">
+                    <Button Text="-"  Clicked="Button_Clicked_Add_Or_Remove"/>
+                </Border >
+                    
+                    <Label x:Name="Lebel_Count_Product"  FontSize="26" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="Black" Grid.Column="2"/>
+                <Border   Grid.Column="3" Margin="5">
+                      <Button  Text="+" Clicked="Button_Clicked_Add_Or_Remove"/>
+                </Border>
+             
+                </Grid>
+            </Border>
+        </Grid>
+
+   
+</ContentPage>

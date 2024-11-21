@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.MainPage"  NavigationPage.HasNavigationBar="False" Background="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" Margin="5"  >
+        <Border  Margin="10" Stroke="Gray" >
+            <Label Text="Авторизация" HorizontalOptions="Center" FontSize="30"/>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="30" />
+            </Border.StrokeShape>
+        </Border>
+
+        <Label Text="Логин" Margin="0,30,0,0"    />
+        <Entry x:Name="Entry_Login"  Placeholder="Введите логин:" FontSize="20" />
+        <Label Text="Пароль" Margin="0,15,0,0" />
+        <Entry x:Name="Entry_Password"  Placeholder="Введите пароль:" FontSize="20"  IsPassword="True"/>
+        <Button x:Name="ButtonOpen" Text="Войти" Margin="30,30,30,0" FontSize="23"  Clicked="NextPageNavigation" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button x:Name="ButtonRegistr" Text="Регистрация"  FontSize="15" Background="White"  TextColor="Gray"    Clicked="NextPageNavigationRegistr"/>
+            <Button Text="Забыл пароль?"  FontSize="15" Background="White"    TextColor="Gray" Clicked="Button_Clicked_NewPassword"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.PageRegistr"
+             Title="" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="MaxLength" Value="20"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Margin="5" >
+        <Label Text="Регистрация" HorizontalTextAlignment="Center" Margin="10" FontSize="25" TextColor="Black"/>
+        <Label Text=" Придумайте логин:"/>
+        <Entry x:Name="Add_Entry_Loginn"  />
+        <Label Text="Пароль:"/>
+        <Entry x:Name="Add_Entry_Password"  IsPassword="True"/>
+        <Label Text="Введите адрес электронной почты"/>
+        <Entry x:Name="Add_Entry_Email" Keyboard="Email" MaxLength="60"/>
+        <Label Text="Введите номер телефона"/>
+        <Entry x:Name="Add_Entry_Phone" Keyboard="Telephone"/>
+        <Button Text="Завершить регистрацию" Clicked="Button_Clicked" HorizontalOptions="Center" FontSize="17"/>
+
+    </StackLayout>
+</ContentPage>
